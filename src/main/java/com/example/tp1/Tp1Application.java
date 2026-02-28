@@ -89,11 +89,7 @@ public class Tp1Application implements CommandLineRunner {
         etudiant1.setLivres(Arrays.asList(livre1, livre3));
         etudiantRepository.save(etudiant1);
 
-        Etudiant etudiant1Updated = etudiantRepository.findById(etudiant1.getCode()).get();
-        System.out.println("=== Emprunts de l'étudiant 1 ===");
-        for (Livre l : etudiant1Updated.getLivres()) {
-            System.out.println(l);
-        }
+
 
 
 
