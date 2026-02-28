@@ -30,6 +30,10 @@ public class Livre implements Serializable {
     @Column(name = "nb_copies")
     private Integer nbCopies;
 
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "idEtat")
+    private EtatLivre etat;
+
     public Livre() {
     }
 
@@ -87,5 +91,18 @@ public class Livre implements Serializable {
 
     public void setNbCopies(Integer nbCopies) {
         this.nbCopies = nbCopies;
+    }
+
+    public EtatLivre getEtat() {
+        return etat;
+    }
+
+    public void setEtat(EtatLivre etat) {
+        this.etat = etat;
+    }
+
+    @Override
+    public String toString() {
+        return "Livre{code=" + code + ", isbn='" + isbn + "', titre='" + titre + "', auteur='" + auteur + "', datePublication=" + datePublication + ", nbCopies=" + nbCopies + ", etat=" + etat + "}";
     }
 }
